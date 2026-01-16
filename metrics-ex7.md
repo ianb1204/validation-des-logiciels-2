@@ -1,6 +1,6 @@
 # Validation des logigicels 2 - exercice 7
 
-# Exercice 7 : Cycle de vie Maven et Dépendances
+### Exercice 7 : Cycle de vie Maven et Dépendances
 
 1. Analyse des commandes et phases exécutées :
     * ```mvn clean``` : Exécute la phase de nettoyage en supprimant le dossier /target.

@@ -1,3 +1,4 @@
+package com.imt.mines;
 public interface ACHService {
 	/**
 	 * Register account to transfer funds to another bank/account
