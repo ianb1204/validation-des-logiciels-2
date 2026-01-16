@@ -43,4 +43,11 @@ public class BankAccountTest {
     public void testGetInitMoneyAmount_InitialState() {
         assertEquals("Le montant initial par défaut doit être 0", 0.0, account.getInitMoneyAmount(), 0.001);
     }
+
+    @Test
+    public void testLoadFromText_FileNotFound() {
+        int result = account.loadFromText("non_existent_file.txt");
+        
+        assertEquals("Le nombre de comptes chargés devrait être 0 pour un fichier inexistant", 0, result);
+    }
 }
