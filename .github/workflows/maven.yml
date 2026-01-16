@@ -1,9 +1,7 @@
-name: Java CI with Maven
+name: Java CI
 
 on:
   push:
-    branches: [ "main" ]  # Déclenchement à chaque push sur main
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -11,28 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Récupération du code source
-    - uses: actions/checkout@v4
+      # 1. Récupération du code
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # 2. Configuration du JDK
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+      # 2. Installation de l'environnement Java
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
 
-    # 3. Phase : Clean & Test (Exercice 10.1)
-    - name: Run Tests
-      run: mvn clean test
+      # 3. Exécution des tests (Exercice 10.1)
+      - name: Clean & test
+        run: mvn clean test
 
-    # 4. Phase : Package (Exercice 10.2)
-    - name: Build with Maven (Package)
-      run: mvn package -DskipTests # On saute les tests car ils viennent d'être faits
+      # 4. Génération de l'archive (Exercice 10.2)
+      - name: Package project
+        run: mvn package -DskipTests # -DskipTests évite de rejouer les tests déjà faits à l'étape précédente
 
-    # 5. Phase : Sauvegarde de l'artefact (Exercice 10.3)
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: bank-application-build
-        path: target/ # Sauvegarde tout le dossier target
+      # 5. Sauvegarde du dossier target (Exercice 10.3)
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-build-artifacts
+          path: target/
