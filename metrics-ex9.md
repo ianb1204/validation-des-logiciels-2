@@ -1,6 +1,6 @@
 # Validation des logigicels 2 - exercice 9
 
-### Exercice 9 : Write unit tests for the bank domain
+### Exercice 9 : Increase coverage with JaCoCo
 
 Le coverage de ```BankAccount``` est à 19%, je vais donc choisir cette classe. Dans cette classe, la méthode ```loadFromText(String)```àà un coverage de 0%, je vais rajouter un test la concernant :
 
