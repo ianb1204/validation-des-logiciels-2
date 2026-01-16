@@ -1,4 +1,4 @@
 # Validation des logiciels 2
 
 Lien vers les exercices :
-* [Exercice 5](metrics-ex5.md)
+* [Exercice 7](metrics-ex7.md)

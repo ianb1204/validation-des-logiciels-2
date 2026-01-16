@@ -1,5 +1,3 @@
-package bankAccountApp;
-
 import java.util.Scanner;
 
 //TODO Add a validation to email address to insure that it is a string with a "." imbedded and characters to the right an left
